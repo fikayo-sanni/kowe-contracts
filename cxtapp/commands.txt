@@ -1,0 +1,7 @@
+export PATH=$PATH:~/scripts
+
+export PATH=$PATH:/usr/local/eosio/bin
+
+nodeos --extract-genesis-json genesis.json
+
+nodeos -e -p eosio --genesis-json genesis.json --delete-all-blocks --plugin eosio::chain_api_plugin --plugin eosio::history_api_plugin
